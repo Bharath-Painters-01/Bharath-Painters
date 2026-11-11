@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import {
   CheckCircle,
-  Image,
+  Image as ImageIcon,
   Shield,
   Clock,
   Star,
@@ -103,7 +103,7 @@ export default function Wallpapers() {
         "Our expert installation ensures perfectly aligned patterns and invisible seams.",
     },
     {
-      icon: <Image size={32} />,
+      icon: <ImageIcon size={32} />,
       title: "Dramatic Transformation",
       description:
         "Wallpaper instantly transforms spaces with color, pattern, and texture.",

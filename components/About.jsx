@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import { CheckCircle, Award, Users, Clock } from "lucide-react";
 
 // 🔹 CountUp Hook (runs when "start" becomes true)
@@ -92,7 +93,7 @@ export default function About() {
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-1.5 lg:mb-2 ">
               Our team of licensed and insured professionals ensures that every
-              project-whether it's a quick touch-up, a stylish texture finish,
+              project-whether it&apos;s a quick touch-up, a stylish texture finish,
               or a complete home makeover-is handled with care, precision, and
               affordability.
             </p>
@@ -128,9 +129,11 @@ export default function About() {
 
           {/* Image */}
           <div className="relative">
-            <img
-              src="images/about.jpg"
+            <Image
+              src="/images/about.jpg"
               alt="Professional team at work"
+              width={800}
+              height={600}
               className="rounded-lg shadow-lg lg:shadow-xl max-h-fit object-cover sm:ml-24"
             />
             <div className="absolute -bottom-4 sm:-bottom-6 -left-2 sm:left-8 bg-blue-600 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-lg shadow-md lg:shadow-lg">
@@ -145,26 +148,33 @@ export default function About() {
         {/* Stats Section with Animation */}
         <div ref={statsRef} className="mt-8 lg:mt-12 mb-2 ">
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
-            {stats.map((stat, index) => {
-              const count = useCountUp(stat.number, 2000, startCount);
-              return (
-                <div key={index} className="text-center">
-                  <div className="text-blue-600 mb-3 flex justify-center">
-                    {stat.icon}
-                  </div>
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 lg:mb-2">
-                    {count}
-                    {stat.suffix}
-                  </div>
-                  <div className="text-xs sm:text-sm lg:text-base text-gray-600">
-                    {stat.label}
-                  </div>
-                </div>
-              );
-            })}
+            {stats.map((stat) => (
+              <StatCounter
+                key={stat.label}
+                stat={stat}
+                startCount={startCount}
+              />
+            ))}
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function StatCounter({ stat, startCount }) {
+  const count = useCountUp(stat.number, 2000, startCount);
+
+  return (
+    <div className="text-center">
+      <div className="text-blue-600 mb-3 flex justify-center">{stat.icon}</div>
+      <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 lg:mb-2">
+        {count}
+        {stat.suffix}
+      </div>
+      <div className="text-xs sm:text-sm lg:text-base text-gray-600">
+        {stat.label}
+      </div>
+    </div>
   );
 }

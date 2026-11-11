@@ -219,7 +219,7 @@ export default function FurnitureWork() {
             </div>
             <div className="bg-gray-50 rounded-xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-3">How long does furniture restoration typically take?</h3>
-              <p className="text-gray-600">The timeline varies depending on the complexity of the project. Simple repairs may take a few days, while extensive restorations can take several weeks. We'll provide a specific timeline during the initial consultation.</p>
+              <p className="text-gray-600">The timeline varies depending on the complexity of the project. Simple repairs may take a few days, while extensive restorations can take several weeks. We&apos;ll provide a specific timeline during the initial consultation.</p>
             </div>
             <div className="bg-gray-50 rounded-xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Do you offer in-home furniture services?</h3>

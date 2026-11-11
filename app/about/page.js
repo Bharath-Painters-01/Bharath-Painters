@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import { CheckCircle, Award, Users, Clock, Shield, Heart } from "lucide-react";
 
 export const metadata = {
@@ -105,7 +106,7 @@ export default function About() {
           </h1>
           <p className="text-md sm:text-lg text-blue-100 max-w-3xl mx-auto">
             Your trusted partner for professional home improvement services
-            since 2014. We're committed to transforming your home with quality,
+            since 2014. We&apos;re committed to transforming your home with quality,
             reliability, and exceptional service.
           </p>
         </div>
@@ -154,9 +155,11 @@ export default function About() {
               </p>
             </div>
             <div>
-              <img
-                src="images/about.jpg"
+              <Image
+                src="/images/about.jpg"
                 alt="Our team at work"
+                width={800}
+                height={600}
                 className="rounded-lg shadow-xl sm:ml-32 object-cover"
               />
             </div>
@@ -255,7 +258,7 @@ export default function About() {
               Why Choose Bharath Painters Services?
             </h2>
             <p className="text-md sm:text-lg text-blue-100 max-w-3xl mx-auto">
-              Here's what sets us apart from other home service providers.
+              Here&apos;s what sets us apart from other home service providers.
             </p>
           </div>
 

@@ -105,7 +105,7 @@ export default function ExteriorPainting() {
             Professional Exterior Painting Services
           </h1>
           <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto mb-2">
-            Transform and protect your home's exterior with our expert painting
+            Transform and protect your home&apos;s exterior with our expert painting
             services. Long-lasting finishes that withstand every season.
           </p>
           <div className="flex  gap-3 items-center justify-center flex-col sm:flex-row">

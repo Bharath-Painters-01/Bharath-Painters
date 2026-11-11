@@ -43,7 +43,7 @@ export default function Testimonials() {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -63,7 +63,7 @@ export default function Testimonials() {
             What Our Customers Say
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-blue-100 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our satisfied customers
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied customers
             have to say about our services.
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function Testimonials() {
 
                 {/* Font size smaller on mobile */}
                 <blockquote className="text-base sm:text-lg lg:text-xl text-gray-700 mb-4 sm:mb-6 italic leading-relaxed">
-                  "{testimonials[currentTestimonial].text}"
+                  &ldquo;{testimonials[currentTestimonial].text}&rdquo;
                 </blockquote>
 
                 <div>

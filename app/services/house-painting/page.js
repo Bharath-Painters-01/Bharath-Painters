@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { CheckCircle, Paintbrush, Shield, Clock, Star } from "lucide-react";
@@ -143,9 +144,12 @@ export default function HousePainting() {
               </div>
             </div>
             <div>
-              <img
+              <Image
                 src="https://images.pexels.com/photos/1669799/pexels-photo-1669799.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2"
                 alt="Professional house painting"
+                width={800}
+                height={600}
+                unoptimized
                 className="rounded-lg shadow-xl"
               />
             </div>
@@ -230,7 +234,7 @@ export default function HousePainting() {
               Why Choose Our Painting Services?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're committed to delivering exceptional painting results with
+              We&apos;re committed to delivering exceptional painting results with
               professional service.
             </p>
           </div>
@@ -277,9 +281,12 @@ export default function HousePainting() {
                 key={index}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <img
+                <Image
                   src={image}
                   alt={`Painting project ${index + 1}`}
+                  width={800}
+                  height={600}
+                  unoptimized
                   className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <div className="p-4">

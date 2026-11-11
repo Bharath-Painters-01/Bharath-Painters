@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import {
@@ -280,9 +281,11 @@ export default function Services() {
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="relative h-44 sm:h-48 lg:h-52">
-                  <img
-                    src={service.image}
+                  <Image
+                    src={`/${service.image}`}
                     alt={service.title}
+                    width={600}
+                    height={400}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -358,7 +361,7 @@ export default function Services() {
               Why Choose Our Services?
             </h2>
             <p className="text-md sm:text-lg text-gray-600 max-w-3xl mx-auto">
-              We're committed to delivering exceptional results on every
+              We&apos;re committed to delivering exceptional results on every
               project, big or small.
             </p>
           </div>
@@ -413,7 +416,7 @@ export default function Services() {
             Ready to Get Started?
           </h2>
           <p className="text-md sm:text-lg text-blue-100 mb-4 max-w-3xl mx-auto">
-            Contact us today for a free estimate and consultation. We're here to
+            Contact us today for a free estimate and consultation. We&apos;re here to
             help transform your home.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

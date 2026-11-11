@@ -215,7 +215,7 @@ export default function FalseCeiling() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-gray-50 rounded-xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-3">How long does it take to install a false ceiling?</h3>
-              <p className="text-gray-600">The installation time depends on the size and complexity of the project. A standard room typically takes 2-3 days, while larger or more intricate designs may take longer. We'll provide a specific timeline during consultation.</p>
+              <p className="text-gray-600">The installation time depends on the size and complexity of the project. A standard room typically takes 2-3 days, while larger or more intricate designs may take longer. We&apos;ll provide a specific timeline during consultation.</p>
             </div>
             <div className="bg-gray-50 rounded-xl p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-3">What materials do you use for false ceilings?</h3>

@@ -59,7 +59,7 @@ export default function Testimonials() {
             Client Testimonials
           </h1>
           <p className="text-md sm:text-lg text-blue-100 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our clients have to say
+            Don&apos;t just take our word for it. Here&apos;s what our clients have to say
             about our services.
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function Testimonials() {
                     size={24}
                   />
                   <p className="text-gray-700 italic relative z-10 pl-4 text-xs md:text-sm lg:text-md">
-                    "{testimonial.text}"
+                    &ldquo;{testimonial.text}&rdquo;
                   </p>
                 </div>
               </div>

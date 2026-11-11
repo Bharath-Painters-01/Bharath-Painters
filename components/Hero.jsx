@@ -41,11 +41,14 @@ export default function Hero() {
 
   // Auto slide
   useEffect(() => {
-    setIsVisible(true);
+    const frame = requestAnimationFrame(() => setIsVisible(true));
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
-    return () => clearInterval(interval);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearInterval(interval);
+    };
   }, [slides.length]);
 
   // form states

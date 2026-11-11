@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 
 export const metadata = {
@@ -139,9 +140,11 @@ export default function Gallery() {
                     key={imgIndex}
                     className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
                   >
-                    <img
-                      src={image}
+                    <Image
+                      src={`/${image}`}
                       alt={`${category.category} project ${imgIndex + 1}`}
+                      width={800}
+                      height={600}
                       className="w-full h-48 sm:h-56 object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
@@ -160,7 +163,7 @@ export default function Gallery() {
               Why Showcase Our Work?
             </h2>
             <p className="text-md sm:text-xl text-blue-100 max-w-3xl mx-auto">
-              We believe our projects speak louder than words. Here's why
+              We believe our projects speak louder than words. Here&apos;s why
               customers trust us.
             </p>
           </div>
@@ -193,7 +196,7 @@ export default function Gallery() {
       <section className="py-3 px-1 sm:py-6 bg-white text-center">
         <div className="max-w-3xl mx-auto">
           <p className="text-md sm:text-lg text-gray-700 mb-6">
-            Loved our work? Let's bring the same level of quality to your home.
+            Loved our work? Let&apos;s bring the same level of quality to your home.
             Contact us today for a free consultation and quotation.
           </p>
           <a

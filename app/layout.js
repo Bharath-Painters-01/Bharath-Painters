@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { headers } from "next/headers";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -70,25 +71,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google tag (gtag.js) */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-NVSNJLQ7WZ"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NVSNJLQ7WZ');`,
-          }}
-        />
-
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NW7MQZ5X');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/logo.png" type="image/jpeg" />
@@ -177,6 +159,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
+        <GoogleTagManager gtmId="GTM-NW7MQZ5X" />
+        <GoogleAnalytics gaId="G-NVSNJLQ7WZ" />
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{
@@ -200,7 +184,7 @@ export default function RootLayout({ children }) {
 // Dynamic metadata generator to create a per-request canonical URL
 export async function generateMetadata() {
   try {
-    const hdrs = headers();
+    const hdrs = await headers();
     const host = hdrs.get("host") || "www.bharathpainters.com";
     // prefer forwarded proto if present (Vercel/Proxies)
     const proto = hdrs.get("x-forwarded-proto") || "https";

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import {
   Paintbrush,
@@ -29,10 +30,12 @@ function ServiceCard({ service }) {
       {/* Image carousel */}
       <div className="relative h-48 overflow-hidden rounded-sm">
         {service.images.map((img, index) => (
-          <img
+          <Image
             key={index}
-            src={img}
+            src={img.startsWith("/") ? img : `/${img}`}
             alt={service.title}
+            fill
+            sizes="320px"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
               index === currentImage ? "opacity-100" : "opacity-0"
             }`}
@@ -85,9 +88,15 @@ function MobileServiceCard({ service }) {
   return (
     <div className="flex flex-col items-center text-center pb-2 bg-white rounded-lg shadow-lg">
       <div className="relative w-full">
-        <img
-          src={service.images[0]}
+        <Image
+          src={
+            service.images[0].startsWith("/")
+              ? service.images[0]
+              : `/${service.images[0]}`
+          }
           alt={service.title}
+          width={400}
+          height={100}
           className="w-full h-20 object-cover rounded-t-lg"
         />
         {/* Price overlay */}
