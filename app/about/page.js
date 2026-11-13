@@ -52,41 +52,6 @@ export default function About() {
     },
   ];
 
-  const team = [
-    {
-      name: "Mike Johnson",
-      role: "Founder & CEO",
-      experience: "15+ years",
-      specialty: "Project Management",
-      image:
-        "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=2",
-    },
-    {
-      name: "Sarah Davis",
-      role: "Lead Painter",
-      experience: "12+ years",
-      specialty: "Interior & Exterior Painting",
-      image:
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=2",
-    },
-    {
-      name: "Carlos Martinez",
-      role: "Master Plumber",
-      experience: "18+ years",
-      specialty: "Plumbing & Gas Line Installation",
-      image:
-        "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=2",
-    },
-    {
-      name: "Jennifer Lee",
-      role: "Electrical Contractor",
-      experience: "14+ years",
-      specialty: "Residential Electrical Systems",
-      image:
-        "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=2",
-    },
-  ];
-
   const stats = [
     { number: "8+", label: "Years in Business" },
     { number: "2000+", label: "Happy Customers" },
@@ -205,50 +170,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Meet Our Team */}
-      {/*
-      <section className="py-4 sm:py-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-              Meet Our Expert Team
-            </h2>
-            <p className="text-md sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Our skilled professionals bring years of experience and dedication
-              to every project.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="px-4 py-2">
-                  <h3 className="text-md sm:text-xl font-semibold text-gray-900 mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-600 font-medium mb-1 text-sm sm:text-md">
-                    {member.role}
-                  </p>
-                  <p className="text-gray-600 text-sm mb-1 text-am sm:text-md">
-                    {member.experience} Experience
-                  </p>
-                  <p className="text-gray-500 text-sm">{member.specialty}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      */}
 
       {/* Why Choose Us */}
       <section className="py-8 bg-blue-600 text-white">

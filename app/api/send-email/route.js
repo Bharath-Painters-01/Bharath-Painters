@@ -16,9 +16,6 @@ export async function POST(request) {
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
-      },
-      tls: {
-        rejectUnauthorized: false
       }
     });
 
@@ -65,9 +62,10 @@ export async function POST(request) {
 
     // Send email
     await transporter.sendMail({
-      from: '"Bharath Painters Website" <noreply@bharathpainters.com>',
+      from: '"Bharath Painters Website" <${process.env.RECIPIENT_EMAIL}>',
       to: process.env.RECIPIENT_EMAIL,
-      subject: "New Lead Generated for Bharathpainters Website 🎨",
+      replyTo: from_email,
+      subject: "New Lead Generated for Bharathpainters Website",
       html: emailContent,
     });
 
